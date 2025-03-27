@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #543383;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controldeinventario.PrincipalController">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="28.0" prefWidth="1280.0" style="-fx-background-color: white; -fx-opacity: 0.9;">
+        <menus>
+            <Menu mnemonicParsing="false" text="Sesión">
+              <items>
+                <MenuItem fx:id="menuItemIniciarSesion" mnemonicParsing="false" onAction="#IngresarLogin" text="Iniciar sesión" />
+                  <MenuItem fx:id="menuItemCerrarSesion" mnemonicParsing="false" onAction="#IngresarLogin" text="Cerrar sesión" />
+                  <MenuItem fx:id="menuItemCerrarPrograma" mnemonicParsing="false" onAction="#CerrarVentana" text="Salir" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Almacén">
+            <items>
+              <MenuItem fx:id="menuItemMateriales" mnemonicParsing="false" onAction="#IngresarArticulos" text="Materiales" />
+                  <MenuItem fx:id="menuItemHerramientas" mnemonicParsing="false" onAction="#IngresarHerramientas" text="Herramientas" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Pedidos">
+            <items>
+              <MenuItem fx:id="menuItemPedidos" mnemonicParsing="false" onAction="#IngresarPedidos" text="Ver pedidos" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Tipos">
+              <items>
+                  <MenuItem fx:id="menuItemTMateriales" mnemonicParsing="false" onAction="#IngresarTipos" text="Entrar" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Usuarios">
+            <items>
+              <MenuItem fx:id="menuItemRoles" mnemonicParsing="false" onAction="#IngresarRoles" text="Roles" />
+                  <MenuItem fx:id="menuItemEmpleados" mnemonicParsing="false" onAction="#IngresarEmpleados" text="Empleados" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Mantenimiento">
+              <items>
+                <MenuItem fx:id="menuItemGenerarBD" mnemonicParsing="false" onAction="#IngresarGenerar" text="Generar (Exportar BD)" />
+                  <MenuItem fx:id="menuItemRestaurarBD" mnemonicParsing="false" onAction="#IngresarRestaurar" text="Restaurar BD" />
+                  <MenuItem fx:id="menuItemEliminarBD" mnemonicParsing="false" onAction="#IngresarBorrar" text="Eliminar" />
+              </items>
+            </Menu>
+        </menus>
+         <padding>
+            <Insets bottom="10.0" left="15.0" right="10.0" top="8.0" />
+         </padding>
+      </MenuBar>
+      <ImageView fitHeight="268.0" fitWidth="359.0" layoutX="461.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/logo.png" />
+         </image>
+      </ImageView>
+   </children>
+    <stylesheets>
+        <URL value="@stylesheet.css" />
+    </stylesheets>
+</AnchorPane>

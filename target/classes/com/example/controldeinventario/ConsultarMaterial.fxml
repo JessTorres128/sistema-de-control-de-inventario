@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: white; -fx-opacity: 0.9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controldeinventario.ConsultarMaterialController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <VBox prefHeight="100.0" prefWidth="462.0">
+               <children>
+                  <Label text="Criterios de búsqueda">
+                     <VBox.margin>
+                        <Insets left="15.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label text="Mostrar">
+                     <VBox.margin>
+                        <Insets left="15.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="25.0" prefWidth="585.0" spacing="30.0">
+                     <VBox.margin>
+                        <Insets left="15.0" top="5.0" />
+                     </VBox.margin>
+                     <children>
+                        <JFXRadioButton fx:id="rbMaterial" onAction="#CambiarColumnas" selected="true" text="Materiales">
+                           <selectedColor>
+                              <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+                           </selectedColor>
+                           <unSelectedColor>
+                              <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+                           </unSelectedColor></JFXRadioButton>
+                        <JFXRadioButton fx:id="rbHerramienta" onAction="#CambiarColumnas" text="Herramientas">
+                           <selectedColor>
+                              <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+                           </selectedColor>
+                           <unSelectedColor>
+                              <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+                           </unSelectedColor></JFXRadioButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="139.0">
+               <children>
+                  <JFXButton fx:id="btnSalir" onAction="#SalirConsultaMat" prefHeight="107.0" prefWidth="140.0" style="-fx-background-color: #543383;" text="Agregar" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </VBox.margin></JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Label text="Buscar por">
+         <VBox.margin>
+            <Insets left="15.0" top="5.0" />
+         </VBox.margin>
+      </Label>
+      <HBox prefHeight="32.0" prefWidth="600.0" spacing="15.0">
+         <children>
+            <JFXRadioButton fx:id="rbCodigo_Barras" selected="true" text="Código de barras">
+               <selectedColor>
+                  <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+               </selectedColor>
+               <unSelectedColor>
+                  <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+               </unSelectedColor></JFXRadioButton>
+            <JFXRadioButton fx:id="rbNombre" text="Nombre">
+               <selectedColor>
+                  <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+               </selectedColor>
+               <unSelectedColor>
+                  <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+               </unSelectedColor></JFXRadioButton>
+            <JFXRadioButton fx:id="rbTipo" text="Tipo">
+               <selectedColor>
+                  <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+               </selectedColor>
+               <unSelectedColor>
+                  <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+               </unSelectedColor></JFXRadioButton>
+         </children>
+         <VBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <TextField fx:id="txtBusqueda" onKeyReleased="#Busqueda" style="-fx-background-color: white; -fx-border-color: #543383;">
+         <VBox.margin>
+            <Insets bottom="5.0" left="15.0" right="100.0" />
+         </VBox.margin>
+      </TextField>
+      <TableView fx:id="tableViewMats" prefHeight="266.0" prefWidth="600.0">
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </TableView>
+   </children>
+   <stylesheets>
+      <URL value="@stylesheet.css" />
+   </stylesheets>
+</VBox>

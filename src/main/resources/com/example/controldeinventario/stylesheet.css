@@ -1,0 +1,146 @@
+* {
+	-fx-primary-color:  #543383;
+	-fx-secondary-color:  #472b6e;
+
+	-fx-focus-color: -fx-secondary-color;
+}
+
+.tab-header-area .tab-header-background {
+ 	-fx-background-color: -fx-primary-color;
+}
+.tab-pane .tab:selected {
+	-fx-background-color: -fx-secondary-color;
+	-fx-background-insets: 0 0 0 0;
+	-fx-background-radius: 0 0 0 0;
+}
+
+.button-with-image {
+    -fx-background-image: url('..\..\..\img\cancel.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.tab .tab-label {
+ 	-fx-alignment: CENTER;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-padding: 0 10 0 10;
+}
+.tab-pane:top *.tab-header-area {
+	-fx-padding: 0 0 0 30;
+
+}
+.tab-pane {
+	-fx-background-color: transparent;
+	-fx-tab-min-width: 100px;
+	-fx-tab-min-height: 66px;
+	-fx-tab-max-height: 66px;
+}
+.tab-pane .tab {
+	-fx-background-color: transparent;
+}
+.tab-pane:focused .tab-header-area .headers-region .tab:selected .focus-indicator {
+ 	-fx-border-width: 0;
+	-fx-border-insets: 0 0 0 0;
+	-fx-border-radius: 0;
+}
+.table-view .column-header-background{
+    -fx-background-color:  #543383;
+    -fx-text-fill: white;
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 11px 0 0;
+    -fx-padding: 0 0 5px 0;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+
+}
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+
+
+}
+.column-header .label {
+    -fx-text-fill: white;
+}
+.table-view {
+    -fx-background-color: transparent;
+}
+
+
+
+
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+.table-row-cell: hover {
+    -fx-background-color: white;
+    -fx-text-background-color: #472b6e;
+}
+.table-row-cell: odd{
+    -fx-background-color: #F8F5FB;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+.table-row-cell: even{
+    -fx-background-color: white;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:  linear-gradient(to bottom, white, #B198DA);
+}
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color:  linear-gradient(to right, white, #B198DA);
+}
+.table-row-cell:filled:selected {
+    -fx-background-color: #d0c5de;
+}
+.table-cell .button {
+    -fx-min-width: 25px;
+    -fx-min-height: 20px;
+    -fx-background-color:  #543383;
+    -fx-text-fill: white;
+
+}
+/* Cambia el color de fondo al pasar el cursor sobre un elemento de menú */
+
+.menu-item:hover {
+    -fx-background-color:#b6a3cf; /* Cambia el color al color deseado al pasar el cursor */
+
+}
+.menu-item:focused {
+    -fx-background-color: #b6a3cf; /* Cambia el color al deseado al soltar el botón del ratón */
+}
+.menu:hover {
+    -fx-background-color: #b6a3cf; /* Cambia el color al deseado cuando seleccionado */
+}
+.menu:showing{
+    -fx-background-color: #b6a3cf;
+}
+
+
+
+
+

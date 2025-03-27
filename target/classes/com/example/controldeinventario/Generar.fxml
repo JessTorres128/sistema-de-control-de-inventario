@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controldeinventario.GenerarController">
+   <children>
+      <Label text="Generar">
+         <VBox.margin>
+            <Insets left="20.0" top="10.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <AnchorPane>
+         <VBox.margin>
+            <Insets left="10.0" top="5.0" />
+         </VBox.margin>
+         <children>
+            <JFXComboBox fx:id="cbFormato" focusColor="#472b6e" layoutX="94.0" layoutY="5.0" onAction="#TurnOff" prefHeight="26.0" prefWidth="139.0" unFocusColor="#472b6e" />
+            <Label layoutY="16.0" text="Formato">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" right="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="600.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <children>
+            <VBox fx:id="excel" layoutY="5.7220458984375E-6">
+               <children>
+                  <Label text="Seleccione los campos que desea incluir en el Excel" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets left="150.0" top="50.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="194.0" prefWidth="590.0" spacing="20.0">
+                     <children>
+                        <VBox prefHeight="194.0" prefWidth="200.0" spacing="25.0">
+                           <children>
+                              <JFXCheckBox fx:id="checkBoxHerramienta" checkedColor="#472b6e" text="Herramienta" unCheckedColor="#472b6e">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="20.0" />
+                                 </VBox.margin></JFXCheckBox>
+                              <JFXCheckBox fx:id="checkBoxMaterial" checkedColor="#472b6e" text="Material" unCheckedColor="#472b6e">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="20.0" />
+                                 </VBox.margin></JFXCheckBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="200.0" spacing="25.0">
+                           <children>
+                              <JFXCheckBox fx:id="checkBoxPedidos" checkedColor="#472b6e" text="Pedidos" unCheckedColor="#472b6e">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin></JFXCheckBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="200.0" spacing="25.0">
+                           <children>
+                              <JFXCheckBox fx:id="checkBoxTiposMaterial" checkedColor="#472b6e" text="Tipos de material" unCheckedColor="#472b6e">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin></JFXCheckBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <JFXButton onAction="#GenerarExcelCBool" prefHeight="42.0" prefWidth="118.0" style="-fx-background-color: #543383;" text="Generar" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" />
+                     </VBox.margin></JFXButton>
+               </children>
+            </VBox>
+            <HBox fx:id="pdf" nodeOrientation="RIGHT_TO_LEFT" prefHeight="265.0" prefWidth="600.0" visible="false">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="622.0">
+                     <children>
+                        <TableView fx:id="tableViewCategoria" prefHeight="200.0" prefWidth="600.0" />
+                        <JFXButton buttonType="RAISED" onAction="#GenerarPDF" text="Generar">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </VBox.margin></JFXButton>
+                     </children>
+                  </VBox>
+               </children></HBox>
+            <VBox fx:id="imagencb" layoutX="10.0" layoutY="10.0" nodeOrientation="LEFT_TO_RIGHT" visible="false">
+               <children>
+                  <Label text="Seleccione los campos que desea generear el cb" />
+                  <TreeView fx:id="treeViewCBs" prefHeight="200.0" prefWidth="590.0" />
+                  <JFXButton buttonType="RAISED" onAction="#GenerarCbs" text="Generar">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin></JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@stylesheet.css" />
+   </stylesheets>
+</VBox>

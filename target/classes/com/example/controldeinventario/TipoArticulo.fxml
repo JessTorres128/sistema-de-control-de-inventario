@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+<HBox prefHeight="482.0" prefWidth="557.0" style="-fx-background-color: white; -fx-opacity: 0.9;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controldeinventario.TipoArticuloController">
+   <children>
+      <TabPane fx:id="tabPaneVentana" prefHeight="442.0" prefWidth="426.0">
+         <tabs>
+            <Tab fx:id="tabSearch" closable="false" text="Buscar">
+               <content>
+                  <VBox prefHeight="350.0" prefWidth="350.0">
+                     <children>
+                        <Label text="Criterios de búsqueda">
+                           <VBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <VBox prefHeight="115.0" prefWidth="340.0">
+                           <children>
+                              <Label text="Filtrar">
+                                 <VBox.margin>
+                                    <Insets left="15.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox prefHeight="23.0" prefWidth="340.0" spacing="10.0">
+                                 <children>
+                                    <JFXCheckBox fx:id="checkBoxMaterial" checkedColor="#472b6e" onAction="#Busqueda" selected="true" text="Materiales" unCheckedColor="#472b6e">
+                                       <HBox.margin>
+                                          <Insets left="15.0" />
+                                       </HBox.margin></JFXCheckBox>
+                                    <JFXCheckBox fx:id="checkBoxHerramienta" checkedColor="#472b6e" onAction="#Busqueda" selected="true" text="Herramientas" unCheckedColor="#472b6e" />
+                                 </children>
+                              </HBox>
+                              <Label text="Buscar por">
+                                 <VBox.margin>
+                                    <Insets left="15.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox prefHeight="22.0" prefWidth="340.0" spacing="10.0">
+                                 <children>
+                                    <JFXRadioButton fx:id="radioButtonID" selected="true" text="ID">
+                                       <unSelectedColor>
+                                          <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+                                       </unSelectedColor>
+                                       <selectedColor>
+                                          <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+                                       </selectedColor></JFXRadioButton>
+                                    <JFXRadioButton fx:id="radioButtonNombre" text="Nombre">
+                                       <unSelectedColor>
+                                          <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+                                       </unSelectedColor>
+                                       <selectedColor>
+                                          <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+                                       </selectedColor></JFXRadioButton>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <TextField fx:id="txtBusqueda" onKeyReleased="#Busqueda" prefHeight="26.0" prefWidth="336.0" style="-fx-background-color: white; -fx-border-color: #543383;" />
+                           </children>
+                        </VBox>
+                        <TableView fx:id="tableViewTMateriales" prefHeight="200.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TableView>
+                        <Label fx:id="lblContador" text="Se encontraron x registros" />
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab fx:id="tabNew" closable="false" disable="true" text="Nuevo / Modificar">
+              <content>
+                  <VBox prefHeight="331.0" prefWidth="339.0">
+                     <children>
+                        <Label text="Agregar / Modificar un tipo de articulo">
+                           <VBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox prefHeight="24.0" prefWidth="340.0" spacing="10.0">
+                           <children>
+                              <JFXRadioButton fx:id="rbMaterial" selected="true" text="Material Consumible">
+                                 <selectedColor>
+                                    <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+                                 </selectedColor>
+                                 <unSelectedColor>
+                                    <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+                                 </unSelectedColor></JFXRadioButton>
+                              <JFXRadioButton fx:id="rbHerramienta" text="Herramienta">
+                                 <selectedColor>
+                                    <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+                                 </selectedColor>
+                                 <unSelectedColor>
+                                    <Color red="0.27843138575553894" green="0.16862745583057404" blue="0.4313725531101227" />
+                                 </unSelectedColor></JFXRadioButton>
+                              <JFXRadioButton fx:id="rbEquipo" text="Material Fijo" />
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="53.0" prefWidth="340.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="170.0">
+                                 <children>
+                                    <Label text="ID Articulo">
+                                       <VBox.margin>
+                                          <Insets right="20.0" top="20.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="txtID" editable="false" prefHeight="27.0" prefWidth="168.0" style="-fx-background-color: white; -fx-border-color: #543383;">
+                                       <VBox.margin>
+                                          <Insets bottom="50.0" left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Nombre del articulo" />
+                                    <TextField fx:id="txtNombre" style="-fx-background-color: white; -fx-border-color: #543383;">
+                                       <VBox.margin>
+                                          <Insets bottom="50.0" left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets top="30.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="170.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+              </content>
+            </Tab>
+         </tabs>
+         <HBox.margin>
+            <Insets bottom="20.0" left="20.0" top="20.0" />
+         </HBox.margin>
+      </TabPane>
+      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="126.0" spacing="5.0" style="-fx-background-color: #543383;">
+         <children>
+            <JFXButton fx:id="btnNew" onAction="#NewTipoArticulo" prefHeight="60.0" prefWidth="70.0" text="Nuevo" textFill="WHITE" />
+            <JFXButton fx:id="btnSave" disable="true" onAction="#SaveTipoArticulo" prefHeight="60.0" prefWidth="70.0" text="Guardar" textFill="WHITE" />
+            <JFXButton fx:id="btnEdit" onAction="#EditTipoArticulo" prefHeight="60.0" prefWidth="70.0" text="Modificar" textFill="WHITE" />
+            <JFXButton fx:id="btnDelete" onAction="#DeleteTipoArticulo" prefHeight="60.0" prefWidth="70.0" text="Borrar" textFill="WHITE" />
+            <JFXButton fx:id="btnCancel" disable="true" onAction="#CancelTipoArticulo" prefHeight="60.0" prefWidth="70.0" text="Cancelar" textFill="WHITE" />
+            <JFXButton fx:id="btnExit" onAction="#ExitTipoArticulo" prefHeight="60.0" prefWidth="70.0" text="Salir" textFill="WHITE" />
+         </children>
+         <HBox.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </HBox.margin>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@stylesheet.css" />
+   </stylesheets>
+</HBox>
